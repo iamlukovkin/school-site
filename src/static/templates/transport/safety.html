@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+    <div class="inner-content">
+        <h2>Памятки по безопасности дорожного движения</h2>
+        <img src="{% static 'img/jpg/pdd/2.1.png' %}" style="width: 600px; margin-left: auto; margin-right: auto" alt="">
+        <img src="{% static 'img/jpg/pdd/2.2.png' %}" style="width: 600px; margin-left: auto; margin-right: auto" alt="">
+        <a href="{% url 'transport' %}" class="header header-stroke">Назад</a>
+    </div>
+{% endblock %}

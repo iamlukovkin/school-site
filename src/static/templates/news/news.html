@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    <div class="inner-content">
+        <h1>Новости</h1>
+    </div>
+    {% if news_list %}
+        {% for news in news_list %}
+            <a href="{% url 'news-detail' news.id %}" class="short-news-block" style="background-image: url('../{{ news.imageSrc }}')">
+                <h2 class="hat-content">{{ news.title }}</h2>
+                <p class="hat-content">{{ news.annotation }}</p>
+                <p class="hat-content">Дата: {{ news.date }}</p>
+            </a>
+        {% endfor %}
+    {% else %}
+        <div class="inner-content"><p>Новостей нет</p></div>
+    {% endif %}
+{% endblock %}

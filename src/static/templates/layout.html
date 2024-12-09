@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet " href="{% static 'css/style.css' %}">
+</head>
+<script src="{% static 'js/script.js' %}">
+</script>
+<body onload="defineWindowWidth(); handleResize(); setReload(1.5);">
+    <aside class="aside"> {% include 'sidebar.html' %} </aside>    
+    <main>
+        <header> {% include 'header.html' %} </header>
+        {% block content %} {% endblock %}
+        <footer> {% include 'footer.html' %} </footer>
+    </main>
+    <aside class="aside"> {% include 'sidebar.html' %} </aside> 
+</body>
+</html>
